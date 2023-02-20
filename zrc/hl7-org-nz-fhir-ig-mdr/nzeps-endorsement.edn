@@ -1,0 +1,13 @@
+{ns hl7-org-nz-fhir-ig-mdr.nzeps-endorsement,
+ import #{zen.fhir
+          hl7-fhir-r4-core.dateTime
+          hl7-fhir-r4-core.string
+          hl7-fhir-r4-core.CodeableConcept},
+ schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
+         :zen/desc "NZ ePrescription (NZePS) Endorsements",
+         :zen.fhir/profileUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-endorsement",
+         :zen.fhir/version "0.6.15",
+         :type zen/map,
+         :keys {:endorsementType {:confirms #{hl7-fhir-r4-core.CodeableConcept/schema}},
+                :value {:confirms #{hl7-fhir-r4-core.string/schema}},
+                :expiryDate {:confirms #{hl7-fhir-r4-core.dateTime/schema}}}}}

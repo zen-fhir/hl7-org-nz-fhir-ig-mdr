@@ -1,0 +1,15 @@
+{ns hl7-org-nz-fhir-ig-mdr.search.nzf-nzmt-type-search-parameter,
+ import #{zen.fhir},
+ search {:zen/tags #{zen.fhir/search},
+         :fhir/id "nzf-nzmt-type-search-parameter",
+         :fhir/url "http://hl7.org.nz/fhir/SearchParameter/nzf-nzmt-type-search-parameter",
+         :fhir/type "token",
+         :name "nzmt-type",
+         :expr {:Medication {:knife [["extension"
+                                      {:url "http://hl7.org.nz/fhir/StructureDefinition/nzf-nzmt-type"}
+                                      "extension"
+                                      "value"
+                                      "code"]],
+                             :jsonpath ["$.\"extension\"?(@.\"url\"==\"http://hl7.org.nz/fhir/StructureDefinition/nzf-nzmt-type\").\"extension\".\"value\".\"code\"[*]"],
+                             :data-types #{},
+                             :template :token}}}}

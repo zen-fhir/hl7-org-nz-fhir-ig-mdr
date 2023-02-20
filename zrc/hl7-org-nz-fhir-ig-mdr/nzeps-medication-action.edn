@@ -1,0 +1,8 @@
+{ns hl7-org-nz-fhir-ig-mdr.nzeps-medication-action,
+ import #{hl7-fhir-r4-core.code zen.fhir},
+ schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
+         :zen/desc "NZePS Status Types",
+         :zen.fhir/type "code",
+         :zen.fhir/profileUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-medication-action",
+         :zen.fhir/version "0.6.15",
+         :confirms #{hl7-fhir-r4-core.code/schema}}}

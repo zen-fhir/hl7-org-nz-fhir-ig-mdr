@@ -1,0 +1,67 @@
+{ns hl7-org-nz-fhir-ig-mdr.NzepsMedicationRequest,
+ import #{hl7-org-nz-fhir-ig-mdr.nzeps-trial-period-reason
+          zen.fhir
+          hl7-org-nz-fhir-ig-mdr.nzeps-instructions-modified
+          hl7-org-nz-fhir-ig-mdr.nzeps-unsigned-rejection-reason
+          fhir-org-nz-ig-base.nzeps-supply-period-reason
+          hl7-org-nz-fhir-ig-mdr.nzeps-notify
+          hl7-org-nz-fhir-ig-mdr.nzeps-private-item
+          hl7-org-nz-fhir-ig-mdr.nzeps-medication-claimable
+          hl7-org-nz-fhir-ig-mdr.nzeps-medication-action
+          hl7-fhir-r4-core.MedicationRequest
+          hl7-org-nz-fhir-ig-mdr.nzeps-funding-category
+          hl7-org-nz-fhir-ig-mdr.nzeps-status-type
+          hl7-org-nz-fhir-ig-mdr.nzeps-endorsement
+          hl7-org-nz-fhir-ig-mdr.nzeps-force-notification
+          fhir-org-nz-ig-base.nzeps-long-term-medication
+          fhir-org-nz-ig-base.nzeps-unusual-dose-quantity
+          hl7-org-nz-fhir-ig-mdr.nzeps-medication-modified},
+ schema {:zen.fhir/version "0.6.15",
+         :confirms #{zen.fhir/Resource
+                     hl7-fhir-r4-core.MedicationRequest/schema},
+         :zen/tags #{zen.fhir/profile-schema zen/schema},
+         :zen.fhir/profileUri "http://hl7.org.nz/fhir/StructureDefinition/NzepsMedicationRequest",
+         :require #{:nzeps-medication-claimable
+                    :nzeps-private-item
+                    :nzeps-instructions-modified
+                    :nzeps-medication-action
+                    :nzeps-medication-modified
+                    :nzeps-status-type
+                    :nzeps-unusual-dose-quantity
+                    :nzeps-notify
+                    :nzeps-force-notification
+                    :nzeps-long-term-medication},
+         :type zen/map,
+         :zen/desc "Medication Request resource for use in NZ e-Prescription Service Medications Data Repository",
+         :keys {:nzeps-medication-claimable {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-medication-claimable/schema},
+                                             :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-medication-claimable"},
+                :nzeps-private-item {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-private-item/schema},
+                                     :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-private-item"},
+                :nzeps-instructions-modified {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-instructions-modified/schema},
+                                              :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-instructions-modified"},
+                :nzeps-medication-action {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-medication-action/schema},
+                                          :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-medication-action"},
+                :nzeps-medication-modified {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-medication-modified/schema},
+                                            :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-medication-modified"},
+                :nzeps-status-type {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-status-type/schema},
+                                    :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-status-type"},
+                :nzeps-unusual-dose-quantity {:confirms #{fhir-org-nz-ig-base.nzeps-unusual-dose-quantity/schema},
+                                              :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-unusual-dose-quantity"},
+                :nzeps-unsigned-rejection-reason {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-unsigned-rejection-reason/schema},
+                                                  :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-unsigned-rejection-reason"},
+                :nzeps-endorsement {:type zen/vector,
+                                    :every {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-endorsement/schema},
+                                            :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-endorsement"}},
+                :nzeps-funding-category {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-funding-category/schema},
+                                         :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-funding-category"},
+                :nzeps-notify {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-notify/schema},
+                               :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-notify"},
+                :nzeps-force-notification {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-force-notification/schema},
+                                           :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-force-notification"},
+                :nzeps-trial-period-reason {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-trial-period-reason/schema},
+                                            :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-trial-period-reason"},
+                :nzeps-long-term-medication {:confirms #{fhir-org-nz-ig-base.nzeps-long-term-medication/schema},
+                                             :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-long-term-medication"},
+                :nzeps-supply-period-reason {:confirms #{fhir-org-nz-ig-base.nzeps-supply-period-reason/schema},
+                                             :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-supply-period-reason"}},
+         :zen.fhir/type "MedicationRequest"}}

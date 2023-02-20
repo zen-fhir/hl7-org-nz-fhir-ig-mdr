@@ -1,0 +1,8 @@
+{ns hl7-org-nz-fhir-ig-mdr.nzeps-medication-copayment-paid,
+ import #{zen.fhir hl7-fhir-r4-core.boolean},
+ schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
+         :zen/desc "NZePSMedication-Copayment-paid",
+         :zen.fhir/type "boolean",
+         :zen.fhir/profileUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-medication-copayment-paid",
+         :zen.fhir/version "0.6.15",
+         :confirms #{hl7-fhir-r4-core.boolean/schema}}}

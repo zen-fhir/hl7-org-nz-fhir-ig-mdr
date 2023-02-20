@@ -1,0 +1,28 @@
+{ns hl7-org-nz-fhir-ig-mdr.NzepsMedicationDispense,
+ import #{hl7-org-nz-fhir-ig-mdr.nzeps-pharmacy-approval-original
+          zen.fhir
+          hl7-fhir-r4-core.MedicationDispense
+          hl7-org-nz-fhir-ig-mdr.nzeps-funding-category
+          hl7-org-nz-fhir-ig-mdr.nzeps-medication-copayment-paid
+          hl7-org-nz-fhir-ig-mdr.nzeps-endorsement
+          hl7-org-nz-fhir-ig-mdr.nzeps-scriptno-local},
+ schema {:zen.fhir/version "0.6.15",
+         :confirms #{hl7-fhir-r4-core.MedicationDispense/schema
+                     zen.fhir/Resource},
+         :zen/tags #{zen.fhir/profile-schema zen/schema},
+         :zen.fhir/profileUri "http://hl7.org.nz/fhir/StructureDefinition/NzepsMedicationDispense",
+         :require #{:nzeps-medication-copayment-paid},
+         :type zen/map,
+         :zen/desc "Medication Dispense resource for use in NZ e-Prescription Service Medicines Data Repository",
+         :keys {:nzeps-endorsement {:type zen/vector,
+                                    :every {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-endorsement/schema},
+                                            :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-endorsement"}},
+                :nzeps-pharmacy-approval-original {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-pharmacy-approval-original/schema},
+                                                   :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-pharmacy-approval-original"},
+                :nzeps-funding-category {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-funding-category/schema},
+                                         :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-funding-category"},
+                :nzeps-scriptno-local {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-scriptno-local/schema},
+                                       :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-scriptno-local"},
+                :nzeps-medication-copayment-paid {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-medication-copayment-paid/schema},
+                                                  :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-medication-copayment-paid"}},
+         :zen.fhir/type "MedicationDispense"}}
