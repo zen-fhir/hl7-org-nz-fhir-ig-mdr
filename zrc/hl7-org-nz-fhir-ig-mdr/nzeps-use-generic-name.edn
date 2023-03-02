@@ -4,5 +4,5 @@
          :zen/desc "NZePS Use Generic Drug Name Indicator",
          :zen.fhir/type "boolean",
          :zen.fhir/profileUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-use-generic-name",
-         :zen.fhir/version "0.6.15",
+         :zen.fhir/version "0.6.16-2",
          :confirms #{hl7-fhir-r4-core.boolean/schema}}}
