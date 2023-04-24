@@ -4,7 +4,7 @@
          :zen/desc "Medication resource for use in NZ e-Prescription Service Medicines Data Repository",
          :zen.fhir/type "Medication",
          :zen.fhir/profileUri "http://hl7.org.nz/fhir/StructureDefinition/NzepsMedication",
-         :zen.fhir/version "0.6.22",
+         :zen.fhir/version "0.6.22-1",
          :confirms #{hl7-fhir-r4-core.Medication/schema
                      zen.fhir/Resource},
          :type zen/map,
