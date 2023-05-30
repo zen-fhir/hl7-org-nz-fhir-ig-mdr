@@ -6,7 +6,7 @@
           hl7-org-nz-fhir-ig-mdr.nzeps-medication-copayment-paid
           hl7-org-nz-fhir-ig-mdr.nzeps-endorsement
           hl7-org-nz-fhir-ig-mdr.nzeps-scriptno-local},
- schema {:zen.fhir/version "0.6.27",
+ schema {:zen.fhir/version "0.6.28",
          :confirms #{hl7-fhir-r4-core.MedicationDispense/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
