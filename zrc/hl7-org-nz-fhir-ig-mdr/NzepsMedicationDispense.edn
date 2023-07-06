@@ -6,7 +6,7 @@
           hl7-org-nz-fhir-ig-mdr.nzeps-medication-copayment-paid
           hl7-org-nz-fhir-ig-mdr.nzeps-endorsement
           hl7-org-nz-fhir-ig-mdr.nzeps-scriptno-local},
- schema {:zen.fhir/version "0.6.29-22",
+ schema {:zen.fhir/version "0.6.29-4",
          :confirms #{hl7-fhir-r4-core.MedicationDispense/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
@@ -24,5 +24,6 @@
                 :nzeps-scriptno-local {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-scriptno-local/schema},
                                        :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-scriptno-local"},
                 :nzeps-medication-copayment-paid {:confirms #{hl7-org-nz-fhir-ig-mdr.nzeps-medication-copayment-paid/schema},
-                                                  :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-medication-copayment-paid"}},
+                                                  :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-medication-copayment-paid"},
+                :medication {:fhir/polymorphic true, :type zen/map}},
          :zen.fhir/type "MedicationDispense"}}

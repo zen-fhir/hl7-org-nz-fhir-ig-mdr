@@ -16,7 +16,7 @@
           fhir-org-nz-ig-base.nzeps-long-term-medication
           fhir-org-nz-ig-base.nzeps-unusual-dose-quantity
           hl7-org-nz-fhir-ig-mdr.nzeps-medication-modified},
- schema {:zen.fhir/version "0.6.29-22",
+ schema {:zen.fhir/version "0.6.29-4",
          :confirms #{zen.fhir/Resource
                      hl7-fhir-r4-core.MedicationRequest/schema},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
@@ -62,6 +62,7 @@
                                             :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-trial-period-reason"},
                 :nzeps-long-term-medication {:confirms #{fhir-org-nz-ig-base.nzeps-long-term-medication/schema},
                                              :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-long-term-medication"},
+                :medication {:fhir/polymorphic true, :type zen/map},
                 :nzeps-supply-period-reason {:confirms #{fhir-org-nz-ig-base.nzeps-supply-period-reason/schema},
                                              :fhir/extensionUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-supply-period-reason"}},
          :zen.fhir/type "MedicationRequest"}}
