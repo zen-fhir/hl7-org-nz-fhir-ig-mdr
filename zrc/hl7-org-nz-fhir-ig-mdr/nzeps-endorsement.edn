@@ -8,7 +8,7 @@
                      zen.fhir/structure-schema},
          :zen/desc "NZ ePrescription (NZePS) Endorsements",
          :zen.fhir/profileUri "http://hl7.org.nz/fhir/StructureDefinition/nzeps-endorsement",
-         :zen.fhir/version "0.6.29-4",
+         :zen.fhir/version "0.6.30",
          :type zen/map,
          :keys {:endorsementType {:confirms #{hl7-fhir-r4-core.CodeableConcept/schema}},
                 :value {:confirms #{hl7-fhir-r4-core.string/schema}},
